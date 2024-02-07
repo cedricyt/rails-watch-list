@@ -3,6 +3,7 @@
 <div class="container">
   <div class="row mt-5">
     <% @list.movies.each do |movie| %>
+     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
     <ul>
       <li><%= movie.title %></li>
     </ul>

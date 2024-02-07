@@ -4,7 +4,8 @@
       <h1>Add new bookmark for <%= @list.name %></h1>
 
       <%= simple_form_for [@list, @bookmark] do |f| %>
-        <%= f.input :movie, collection: Movie.all, input_html: {multiple: true}, include_hidden: false %>
+        <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+        <%= f.input :movie_id, collection: Movie.all, input_html: {multiple: true}, include_hidden: false %>
         <%= f.submit "Add movie to #{@list.name}", class: 'btn btn-primary' %>
       <% end %>
     </div>
